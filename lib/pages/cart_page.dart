@@ -50,7 +50,10 @@ class _CartPageState extends State<CartPage> {
                           return CoffeeTile(
                             coffee: eachCoffee,
                             onPressed: () => removeFromCart(eachCoffee),
-                            icon: Icon(Icons.delete),
+                            icon: Icon(
+                              Icons.delete,
+                              color: Colors.brown,
+                            ),
                           );
                         },
                       ),

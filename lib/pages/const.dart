@@ -1,4 +1,4 @@
 import 'package:flutter/material.dart';
 
 // background color variable for entire App
-var backgroundColor = Colors.grey[300];
+var backgroundColor = Colors.grey[400];

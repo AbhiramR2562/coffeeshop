@@ -56,7 +56,10 @@ class _ShopPageState extends State<ShopPage> {
                       // Return the tile coffee
                       return CoffeeTile(
                         coffee: eachCoffee,
-                        icon: Icon(Icons.add),
+                        icon: Icon(
+                          Icons.add,
+                          color: Colors.brown,
+                        ),
                         onPressed: () => addToCart(eachCoffee),
                       );
                     }),
