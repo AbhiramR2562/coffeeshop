@@ -1,7 +1,7 @@
 import 'package:cofee_shop/components/coffee_tile.dart';
 import 'package:cofee_shop/models/coffee.dart';
 import 'package:cofee_shop/models/coffee_shop.dart';
-import 'package:cofee_shop/pages/cart_page.dart';
+import 'package:cofee_shop/pages/order_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,16 +13,15 @@ class ShopPage extends StatefulWidget {
 }
 
 class _ShopPageState extends State<ShopPage> {
-  // Add coffee to cart
-  void addToCart(Coffee coffee) {
-    // Sdd to cart
-    Provider.of<CoffeeShop>(context, listen: false).addItemToCart(coffee);
-
-    // Let user know it add been successfully added
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text("Successfully added to cart"),
+  // user select a coffee, go to order page
+  void goToOrderPage(Coffee coffee) {
+    // navigate to order page
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => orderPAge(
+          coffee: coffee,
+        ),
       ),
     );
   }
@@ -35,10 +34,14 @@ class _ShopPageState extends State<ShopPage> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
+              const SizedBox(
+                height: 25,
+              ),
+
               // Heading message
               Text(
                 "How would you like your coffee?",
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20, color: Colors.brown[800]),
               ),
 
               const SizedBox(
@@ -56,11 +59,8 @@ class _ShopPageState extends State<ShopPage> {
                       // Return the tile coffee
                       return CoffeeTile(
                         coffee: eachCoffee,
-                        icon: Icon(
-                          Icons.add,
-                          color: Colors.brown,
-                        ),
-                        onPressed: () => addToCart(eachCoffee),
+                        onPressed: () => goToOrderPage(eachCoffee),
+                        trailing: Icon(Icons.arrow_forward),
                       );
                     }),
               )

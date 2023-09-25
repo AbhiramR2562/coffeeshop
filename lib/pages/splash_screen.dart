@@ -3,8 +3,6 @@ import 'dart:async';
 import 'package:cofee_shop/pages/intro_home_page.dart';
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
-
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -37,6 +35,9 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Column(
           children: [
+            const SizedBox(
+              height: 100,
+            ),
             // icon
             Padding(
               padding: const EdgeInsets.all(25.0),

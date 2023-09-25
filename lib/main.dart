@@ -1,5 +1,4 @@
 import 'package:cofee_shop/models/coffee_shop.dart';
-import 'package:cofee_shop/pages/home_page.dart';
 
 import 'package:cofee_shop/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => CoffeeShop(),
-      builder: (context, child) => const MaterialApp(
+      builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
+        theme: ThemeData(primarySwatch: Colors.brown),
         home: SplashScreen(),
       ),
     );

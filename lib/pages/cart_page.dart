@@ -12,7 +12,7 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
-  // Remove cart items
+  // Remove coffee from cart
   void removeFromCart(Coffee coffee) {
     Provider.of<CoffeeShop>(context, listen: false).removeItemFromCart(coffee);
   }
@@ -35,7 +35,7 @@ class _CartPageState extends State<CartPage> {
                     // HEADING
                     Text(
                       'Your cart',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: 20, color: Colors.brown[800]),
                     ),
 
                     // List of cart items
@@ -50,10 +50,7 @@ class _CartPageState extends State<CartPage> {
                           return CoffeeTile(
                             coffee: eachCoffee,
                             onPressed: () => removeFromCart(eachCoffee),
-                            icon: Icon(
-                              Icons.delete,
-                              color: Colors.brown,
-                            ),
+                            trailing: Icon(Icons.delete),
                           );
                         },
                       ),

@@ -13,6 +13,9 @@ class IntroHomePage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
           child: Column(
             children: [
+              const SizedBox(
+                height: 100,
+              ),
               // Logo
               Padding(
                 padding: const EdgeInsets.all(25.0),
